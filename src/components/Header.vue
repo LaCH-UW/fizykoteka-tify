@@ -8,7 +8,6 @@
 
 		<div class="tify-header_column -pagination">
 			<div class="tify-header_button-group">
-				<page-select class="tify-header_button"/>
 
 				<button
 					class="tify-header_button"
@@ -161,15 +160,6 @@
 					{{ 'Export'|trans }}
 				</button>
 
-				<button
-					class="tify-header_button -icon-only"
-					:class="{ '-active': $root.params.view === 'help' }"
-					:title="$options.filters.trans('Help')"
-					@click="toggleView('help')"
-				>
-					<icon name="help_outline"/>
-					{{ 'Help'|trans }}
-				</button>
 			</div>
 
 			<div class="tify-header_button-group -view" v-if="fullscreenSupported">
@@ -261,14 +251,14 @@
 </template>
 
 <script>
-import PageSelect from '@/components/PageSelect';
+// import PageSelect from '@/components/PageSelect';
 
 import keyboard from '@/mixins/keyboard';
 import pagination from '@/mixins/pagination';
 
 export default {
 	components: {
-		PageSelect,
+		// PageSelect,
 	},
 	mixins: [
 		keyboard,
