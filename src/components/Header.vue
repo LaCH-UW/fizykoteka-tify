@@ -1,9 +1,6 @@
 <template>
 	<header class="tify-header">
 		<div class="tify-header_column -title">
-			<h1 class="tify-header_title" :title="titles.join(', ')">
-				{{ titles.join(', ') }}
-			</h1>
 		</div>
 
 		<div class="tify-header_column -pagination">
