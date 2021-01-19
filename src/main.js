@@ -45,6 +45,7 @@ if (window.tifyOptions) {
 			}
 			break;
 		case 'title':
+		case 'custom_translations_uri':
 		case 'manifest':
 		case 'stylesheet':
 			if (typeof window.tifyOptions[key] !== 'string' && window.tifyOptions[key] !== null) {

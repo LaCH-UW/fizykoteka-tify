@@ -123,7 +123,12 @@ export default {
 
 		// Load translation
 		if (this.$root.options.language !== 'en') {
-			const translationUrl = `${this.$root.base}/translations/${this.$root.options.language}.json`;
+			let translationUrl = '';
+			if (this.$root.options.custom_translations_uri !== null) {
+				translationUrl = this.$root.options.custom_translations_uri;
+			} else {
+				translationUrl = `${this.$root.base}/translations/${this.$root.options.language}.json`;
+			}
 			httpClient.get(translationUrl).then((response) => {
 				this.$root.messages = response.data;
 			}, (error) => {
