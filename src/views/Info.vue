@@ -28,13 +28,13 @@
 			/>
 		</div>
 
-		<div v-if="manifest.description" class="tify-info_section -description">
+		<!-- <div v-if="manifest.description" class="tify-info_section -description">
 			<h3>{{ 'Description'|trans }}</h3>
 			<div
 				:key="index"
 				v-for="(description, index) in getLabels(manifest.description)"
 				v-html="description"/>
-		</div>
+		</div> -->
 
 		<div v-if="license.length" class="tify-info_section -license">
 			<h3>{{ 'License'|trans }}</h3>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 
-		<div v-if="related.length" class="tify-info_section -related">
+		<!-- <div v-if="related.length" class="tify-info_section -related">
 			<h3>{{ 'Related Resources'|trans }}</h3>
 			<div :key="index" v-for="(item, index)  in related">
 				<a v-if="typeof item === 'string'" :href="item">
@@ -68,12 +68,12 @@
 					{{ item['label'] || item['@id'] }}
 				</a>
 			</div>
-		</div>
+		</div> -->
 
-		<div v-if="manifest.attribution" class="tify-info_section -attribution">
+		<!-- <div v-if="manifest.attribution" class="tify-info_section -attribution">
 			<h3>{{ 'Provided by'|trans }}</h3>
 			<div :key="index" v-for="(item, index) in getLabels(manifest.attribution)" v-html="item"/>
-		</div>
+		</div> -->
 
 		<div v-if="manifest.logo" class="tify-info_section -logo">
 			<a
