@@ -2,7 +2,7 @@
 	<section class="tify-info">
 		<h2 class="tify-sr-only">{{ 'Info'|trans }}</h2>
 
-		<div v-if="manifest.label" class="tify-info_section -title">
+		<div v-if="manifest.label && null" class="tify-info_section -title">
 			<h3 class="tify-info_heading">{{ 'Title'|trans }}</h3>
 			<div :key="label" v-for="label in getLabels(manifest.label)">
 				{{ label }}
@@ -36,7 +36,7 @@
 				v-html="description"/>
 		</div> -->
 
-		<div v-if="license.length" class="tify-info_section -license">
+		<div v-if="license.length && null" class="tify-info_section -license">
 			<h3>{{ 'License'|trans }}</h3>
 			<div :key="index" v-for="(item, index)  in license">
 				<template v-if="typeof item === 'string'">

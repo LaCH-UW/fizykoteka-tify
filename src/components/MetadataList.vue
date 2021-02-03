@@ -1,7 +1,7 @@
 <template>
 	<div class="tify-info_metadata">
 		<div v-for="(item, index) in metadata" :key="index">
-			<template>
+			<template v-if="item.label !== 'Tytuł'">
 				<h4>
 					<div v-bind:key="index" v-for="(label, index) in getLabels(item.label)">
 						{{ label|cleanLabel }}
@@ -81,14 +81,16 @@ export default {
 				this.metadata.splice(di, 1);
 			}
 
+			console.log(this.metadata);
+
 			for (let i = 0; i < length; i += 1) {
 				if (typeof this.metadata.value !== 'undefined') {
 					const item = this.metadata[i];
 					const values = this.$root.convertValueToArray(item.value);
 
 					const expectedLineNumber = values.reduce((linesSum, thisValue) => {
-					// assuming we need 1 line minimum to display each value
-					// and a fixed number of chars fits into each line
+						// assuming we need 1 line minimum to display each value
+						// and a fixed number of chars fits into each line
 						let nLines = Math.ceil(this.stripHtml(thisValue).length / maxCharsPerLine);
 						if (nLines < 1) nLines = 1;
 						return linesSum + nLines;
